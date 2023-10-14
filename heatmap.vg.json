@@ -1,0 +1,66 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "Netflix_subscription_fee_Dec_2021.csv"
+    },
+    "title":{
+        "text": "Average Monthly Subscription Fee from No. of TV Shows and Movies",
+        "fontSize": 15
+    },
+    "mark": "rect",
+    "width": 650,
+    "height": 200,
+    "encoding": {
+        "x": {
+            "bin": {
+                "maxbins": 60
+            },
+            "field": "No_of_TV_Shows",
+            "type": "quantitative"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 40
+            },
+            "field": "No_of_Movies",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "avg_sum",
+            "type": "quantitative",
+            "title": "Avg Subscription Fee ($)",
+            "legend": {
+                "orient": "bottom-right"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal"
+            },
+            {
+                "field": "No_of_TV_Shows",
+                "type": "quantitative",
+                "format": ",",
+                "title": "No. of TV Shows"
+            },
+            {
+                "field": "No_of_Movies",
+                "type": "quantitative",
+                "format": ",",
+                "title": "No. of Movies"
+            },
+            {
+                "field": "avg_sum",
+                "type": "quantitative",
+                "title": "Avg Monthly Subscription Fee ($)",
+                "format": ".2f"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

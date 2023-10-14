@@ -1,0 +1,104 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Total Netflix Library Size per Country",
+    "fontSize": 15
+  },
+  "config": {
+    "view": {
+       "stroke": "transparent"
+    }
+  },
+  "width": 587,
+  "height": 300,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "Library_Size_Above",
+      "value": 0,
+      "bind": {
+      "input": "range",
+      "min": 0,
+      "max": 7000,
+      "step": 1000,
+      "name": "Total Library Size: "
+      }
+    }  
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "ne_110m_clip.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      },
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "data": {
+        "url": "ne_110m_clip.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "Netflix_subscription_fee_Dec_2021.csv"
+            },
+            "key": "Country",
+            "fields": [
+              "Total_Library_Size"
+            ]
+          }
+        },
+        {"filter": "datum.Total_Library_Size > Library_Size_Above"}
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white"
+      },
+      "encoding": {
+        "color": {
+          "field": "Total_Library_Size",
+          "type": "quantitative",
+          "scale": {
+            "type": "log"
+          },
+          "title": "Total Library Size"
+        },
+        "tooltip": [
+          {
+            "field": "properties.NAME",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "Total_Library_Size",
+            "type": "quantitative",
+            "title": "Total Library Size",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}

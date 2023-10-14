@@ -1,0 +1,196 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "Netflix_subscription_fee_Dec_2021.csv"
+    },
+    "vconcat": [
+        {
+            "title": {
+                "text": "Basic, Standard & Premium Monthly Subcription Fee per Country",
+                "fontSize": 15
+            },
+            "width": 660,
+            "height": 100,
+            "layer": [
+                {
+                    "mark": {
+                        "type": "bar"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Country",
+                            "type": "nominal",
+                            "title": "",
+                            "axis": {
+                                "labelOverlap": true,
+                                "labelLimit": 50
+                            },
+                            "scale": {
+                                "domain": {
+                                    "param": "brush"
+                                }
+                            }
+                        },
+                        "y": {
+                            "field": "Cost_Per_Month_Premium",
+                            "type": "quantitative",
+                            "title": "Subscription Fee ($)",
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    28
+                                ]
+                            },
+                            "axis": {
+                                "grid": true
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Cost_Per_Month_Premium",
+                                "type": "quantitative",
+                                "title": "Premium Subcription Fee ($)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "bar",
+                        "fill": "purple"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Country",
+                            "type": "nominal",
+                            "title": "",
+                            "axis": {
+                                "labelOverlap": true,
+                                "labelLimit": 50
+                            },
+                            "scale": {
+                                "domain": {
+                                    "param": "brush"
+                                }
+                            }
+                        },
+                        "y": {
+                            "field": "Cost_Per_Month_Standard",
+                            "type": "quantitative",
+                            "title": "",
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    28
+                                ]
+                            }
+                        },
+                        "color":{
+                            "legend": {
+                                "orient": "bottom"
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Cost_Per_Month_Standard",
+                                "type": "quantitative",
+                                "title": "Standard Subcription Fee ($)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "bar",
+                        "fill": "darkorange"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Country",
+                            "type": "nominal",
+                            "title": "",
+                            "axis": {
+                                "labelOverlap": true,
+                                "labelLimit": 50
+                            },
+                            "scale": {
+                                "domain": {
+                                    "param": "brush"
+                                }
+                            }
+                        },
+                        "y": {
+                            "field": "Cost_Per_Month_Basic",
+                            "type": "quantitative",
+                            "title": "",
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    28
+                                ]
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Cost_Per_Month_Basic",
+                                "type": "quantitative",
+                                "title": "Basic Subcription Fee ($)"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "width": 660,
+            "height": 30,
+            "title": "Use bar chart below to view the main chart in detail.",
+            "mark": {
+                "type": "bar",
+                "fill": "grey"
+            },
+            "params": [
+                {
+                    "name": "brush",
+                    "select": {
+                        "type": "interval",
+                        "encodings": [
+                            "x"
+                        ]
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "title":null,
+                    "axis": {
+                        "labelOverlap": true,
+                        "labelLimit": 50,
+                        "labelFontSize": 0,
+                        "tickSize": 0
+                    }
+                },
+                "y": {
+                    "field": "Cost_Per_Month_Premium",
+                    "type": "quantitative",
+                    "axis": null,
+                    "title": ""
+                }
+            }
+        }
+    ]
+}

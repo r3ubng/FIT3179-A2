@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Data Visualisation 2 </title>
+</head>
+
+<body>
+    
+    <div id="mainDiv">
+        <div id="titleDiv">
+            <img src="Logonetflix.png" id="titleimg">
+            <h3 id="mainTitle">Netflix subscription fees and content data in December 2021</h3>
+            <p id="mainDesc">
+                Explore the dynamic world of <b>Netflix subscription fees</b>  across the globe in our eye-opening infographic. 
+                Discover how the size of <b>Netflix's content library</b> can significantly <b>impact subscription prices</b> in different <b>countries</b>. 
+                Dive into the data and uncover fascinating insights into the diverse pricing strategies that shape the Netflix streaming experiences worldwide.
+            </p>
+        </div>
+        
+        <div id="basicDiv">
+            <div id="headingDiv">Netflix Library Size</div>
+            <div id="map"></div>
+            <div id="mapText">
+                <p id="p1">
+                    This map displays the <b>Total Netflix Library Size</b> for<br>
+                    each country with available data. The <b>shade of colour</b><br>
+                    is used to determine the quantity of the library size,<br>
+                    where <b id="darkshade">darker shaded</b> countries have a <b>larger</b> library<br>
+                    size whereas <b id="lightshade">lighter</b> <b id="lightshade">shaded</b> countries have a <b>smaller</b><br>
+                    library size. <br><br>
+                    Use the slider to filter countries based off Library Size.
+                </p>
+                <p id="p2">
+                    From the map, it is clear to see that countries such as<br>
+                    <b>USA, Australia, Canada and The UK</b> have <b>larger</b><br>
+                    library sizes.This is most likely due to their substantial<br> 
+                    market size, competitive streaming landscape, and<br>
+                    extensive licensing agreements, unlike other countries<br>
+                    that use the Netflix streaming service. <br><br> 
+                    The bubble chart below will delve deeper into the Netflix<br> Library Size.
+                </p>
+            </div>
+        </div>
+
+        <div id="borderDiv"></div>
+
+        <div id="basicDiv">
+            <div id="headingDiv">Tv Shows or Movies?</div>
+            <div id="bubbleChart"></div>
+            <div style="font-family: Arial, Helvetica, sans-serif;"><b>Note: Interact with bubble chart by using mouse to move or zoom.</b></div>
+            <div id="mapText">
+                <p id="p1">
+                    The Bubble Chart compares the <b>different sections</b> of <br>
+                    a country's Netflix library and how it affects the total<br>
+                    library size. <br><br>
+                    The <b>No. of TV shows</b> is located along the x-axis, and<br>
+                    the y-axis displays the <b>No. of Movies</b>, whilst the <b>Total</b><br>
+                    <b>Library Size</b> is represented by the size of the Bubble.<br>
+                    Each country is also colour coded into its respective.<br>
+                    <b>continents</b> and can be filtered by using the legend.
+                </p>
+                <p id="p2">
+                    <b>Malaysia</b> is shown to have the highest number of<br>
+                    Movies at <b>2,387</b> but only has <b>3,565</b> TV Shows thus<br>
+                    having <b>less than 6000</b> in Total Library Size. On the<br>
+                    contrary, <b>Czechia</b> has less movies than Malaysia at<br>
+                    <b>2,091</b> but has the largest Library Size of our data<br>
+                    at <b>7,325</b> due a much larger catalogue of TV Shows.<br><br>
+                    There is a slight trend in the data where countries<br>
+                    with more TV Shows, have a larger Total Library Size<br>
+                    than countries with more movies.
+                </p>
+            </div>
+        </div>
+
+        <div id="borderDiv"></div>
+
+        <div id="basicDiv">
+            <div id="headingDiv">The Cost of Netflix</div>
+            <div id="barCharts"></div>
+            <div id="mapText">
+                <p id="p1">
+                    The Stacked Bar Chart displays the <b>Basic, Standard</b><br>
+                    and <b>Premium subscription fee</b> for each country. The <br> 
+                    <b>Basic</b> subcription fee is encoded in <b style="color: darkorange;">orange</b>, <b>Standard</b><br>
+                    fee in <b style="color: purple;">purple</b> and <b>Premium</b> in <b style="color: royalblue;">blue</b>.<br><br>
+                    Use the bar chart located underneath as a <b>zooming</b><br>
+                    <b>tool</b> to get a more detailed view for each country.
+                </p>
+                <p id="p2">
+                    From this chart we can see the subscription fees that<br>
+                    each country charges, are quite similar and around the<br>
+                    same range. There are some outliers like <b>Liechtenstein</b><br>
+                    and Switzerland that have <b>Premium</b> fees over <b>$26</b> and<br> 
+                    also <b>Turkey</b> with a <b>Basic</b> Subscription Fee of <b>only $1.97</b><br><br>
+                    Lets continue to compare Netflix library and fee data to <br>
+                    find a correlation...
+                </p>
+            </div>
+        </div>
+
+        <div id="borderDiv"></div>
+
+        <div id="basicDiv">
+            <div id="headingDiv">Population vs Cost</div>
+            <div id="basicDiv2">
+                <div id="pieChart1"></div>
+                <div id="pieChart2"></div>
+                      
+            </div>
+            <div id="mapText">
+                <p id="p1">
+                    Unlike the preceding graphs above, These two Donut<br>
+                    Charts compare data between <b>continents</b> rather than<br>
+                    countries.<br><br>
+                    The Donut to the left compares the <b>average country</b><br>
+                    <b>population</b> for each continent whilst the Donut chart<br>
+                    to the right compares the <b>average monthly</b><br>
+                    <b>subscription fee</b> for each continent. 
+                </p>
+                <p id="p2">
+                    The continents can be <b>highlighted</b> by clicking the<br>
+                    continent names located on the legends. <b>Detailed</b><br>
+                    <b>information</b> for each continent is presented when hovering<br>
+                    over a section of the Donut Chart.<br><br>
+                    We can see that continents with a higher average<br>
+                    population tend to have a lower monthly subcription fee,<br>
+                    and continents with a lower average population tend to<br>
+                    have a higher subscription fee in most cases.
+                </p>
+            </div>
+        </div>
+        
+
+        <div id="borderDiv"></div>
+
+        <div id="basicDiv">
+            <div id="headingDiv">What Makes the Most Money</div>
+            <div id="heatmap"></div>
+            <div id="mapText">
+                <p id="p1">
+                    This histogram heatmap, provides a final comparison<br>
+                    of <b>Netflix Library size</b> with the <b>Monthly Subscription</b><br>
+                    <b>Fee</b> for each country.<br><br>
+                    The <b>No. of TV Shows</b> is measured on the x-axis and the<br>
+                    <b>No. of Movies</b> on the y-axis. Each country is represented<br>
+                    by a rectangle that is <b id="darkshade">shaded darker</b> for a higher<br>
+                    average subcription fee and <b id="lightshade">lighter</b> for a lower fee.<br><br>
+                    The <b>average monthly subscription</b> fee is <b>calculated</b><br>
+                    from the average of the Basic, Standard and Premium<br>
+                    fees.
+                </p>
+                <p id="p2">
+                    If we disregard the outliers in the <b>bottom left</b> of the<br>
+                    graph, we can see a small trend, where rectangles get<br>
+                    darker towards the <b>middle and right</b> of the graph<br>
+                    whereas there is <b>no trend</b> along the y-axis.<br><br>
+                    This means that Monthly Subcription fees are <b>generally</b><br>
+                    <b>higher</b> if there are more TV shows in the Netflix<br>
+                    rather than more Movies.<br><br>
+                    Although a small correlation between netflix library<br> 
+                    content and subscription fee exists, there are many<br>
+                    <b>other factors</b> that might <b>affect</b> how much Netflix costs.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>

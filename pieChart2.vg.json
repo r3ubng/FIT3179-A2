@@ -1,0 +1,90 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple radial chart with embedded data.",
+    "data": {
+        "url": "Netflix_subscription_fee_Dec_2021.csv"
+    },
+    "config": {
+        "view": {
+           "stroke": "transparent"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "avg_sum",
+                    "as": "cont_avg_fee"
+                }
+            ],
+            "groupby": [
+                "Continent"
+            ]
+        }
+    ],
+    "selection": {
+        "continent_highlight": {
+            "type": "multi",
+            "fields": [
+                "Continent"
+            ],
+            "bind": "legend"
+        }
+    },
+    "title": "Average Subscription Fee per Continent",
+    "width": 230,
+    "height": 150,
+    "mark": {
+        "type": "arc",
+        "innerRadius": 40
+    },
+    "encoding": {
+        "theta": {
+            "field": "cont_avg_fee",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "title": "Continent Filter",
+            "scale": {
+                "domain": [
+                    "North America",
+                    "South America",
+                    "Europe",
+                    "Africa",
+                    "Asia",
+                    "Oceania"
+                ],
+                "range": [
+                    "#e41a1c",
+                    "#984ea3",
+                    "#ff7f00",
+                    "#a6cee3",
+                    "#377eb8",
+                    "#a65628"
+                ]
+            }
+        },
+        "opacity": {
+            "condition": {
+                "selection": "continent_highlight",
+                "value": 1
+            },
+            "value": 0.2
+        },
+        "tooltip": [
+            {
+                "field": "Continent",
+                "type": "nominal"
+            },
+            {
+                "field": "cont_avg_fee",
+                "type": "quantitative",
+                "title": "Average Country Subscription Fee ($)",
+                "format": ".2f"
+            }
+        ]
+    }
+}

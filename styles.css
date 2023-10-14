@@ -1,0 +1,99 @@
+body {
+  background-image: url('background.png');
+  }
+
+#mainTitle {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#titleimg {
+  width: 300px;
+}
+
+#mainDiv {
+  margin-top: 10px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 10px;
+  background-color: gray;
+  text-align: center;
+  border-color: gray;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 25px;
+}
+
+#titleDiv {
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+#mainDesc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#basicDiv {
+  text-align: center;
+  background-color: lightgray;
+  padding-bottom: 10px;
+  border-radius: 25px;
+}
+
+#basicDiv2 {
+  display: flex;
+  background-color: lightgray;
+  padding-left: 10px;
+  border-radius: 25px;
+}
+
+#headingDiv {
+  background-color: rgba(245, 245, 245, 0.587);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-weight: bolder;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#mapText {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+#p1 {
+  padding-left: 35px;
+  text-align: left;
+}
+
+#p2 {
+  padding-left: 30px;
+  text-align: left;
+}
+
+#darkshade {
+  color: darkblue;
+}
+
+#lightshade {
+  color: khaki;
+}
+
+#barCharts {
+  text-align: center;
+}
+
+#pieChart2  {
+  padding-left: 10px;
+}
+
+#borderDiv {
+  background-color: gray;
+  padding: 10px;
+}
